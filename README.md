@@ -17,6 +17,6 @@ This is *NOT* meant to be useful. It is meant for the FUNNIES!!!!! YAY
 
 ---
 
-# Consume the bookmarklet (there are tools online if you can't figure out how to add it):
+### get the bookmarklet
 
 javascript:(()=>{fetch("https://raw.githubusercontent.com/therealsuss/WebSandboxMode/main/wsmcode.js").then(r=>r.text()).then(eval)})
