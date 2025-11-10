@@ -17,6 +17,6 @@ This is *NOT* meant to be useful. It is meant for the FUNNIES!!!!! YAY
 
 ---
 
-### get the bookmarklet
+### get the bookmarklet here:
 
-javascript:(()=>{fetch("https://raw.githubusercontent.com/therealsuss/WebSandboxMode/main/wsmcode.js").then(r=>r.text()).then(eval)})
+https://therealsuss.github.io/WebSandboxMode
