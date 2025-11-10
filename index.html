@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Web Sandbox Mode</title>
+<style>
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #fafafa;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+  }
+  a#bm {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #111;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.2s;
+  }
+  a#bm:hover {
+    background: #333;
+  }
+  button {
+    margin-top: 14px;
+    background: #eee;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  button:hover {
+    background: #ddd;
+  }
+</style>
+</head>
+<body>
+
+<h1>Web Sandbox Mode</h1>
+<a id="bm" href="#">drag to bookmark bar</a>
+<button id="copy">copy if the other one doesnt work</button>
+
+<script>
+  const bookmarklet = `javascript:(()=>{fetch("https://raw.githubusercontent.com/therealsuss/WebSandboxMode/main/wsmcode.js").then(r=>r.text()).then(eval)})`;
+
+  const bm = document.getElementById('bm');
+  bm.href = bookmarklet;
+
+  const copy = document.getElementById('copy');
+  copy.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(bookmarklet);
+      copy.textContent = 'copied hooray';
+      setTimeout(() => copy.textContent = 'copy if the other one doesnt work', 2000);
+    } catch {
+      copy.textContent = 'GOD DAMMIT IT FAILED';
+    }
+  };
+</script>
+
+</body>
+</html>
